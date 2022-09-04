@@ -68,7 +68,7 @@ func main() {
 		}
 		motdGenerate(s)
 
-		newUser := fmt.Sprintf(" * %v (%v)\n", s.User(), strings.Join(s.Command(), " "))
+		newUser := fmt.Sprintf(" * %v (%v) – %v\n", s.User(), strings.Join(s.Command(), " "), s.RemoteAddr().String())
 		_, _ = logFile.WriteString(newUser)
 	})
 
